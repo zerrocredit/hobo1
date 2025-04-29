@@ -18,17 +18,20 @@
             width: 100%;
             height: 100%;
         }
-        object {
-            width: 100%;
-            height: 100%;
-        }
     </style>
 </head>
 <body>
-    <div id="game">
-        <object data="hobo1.swf" type="application/x-shockwave-flash" width="100%" height="100%">
-            <param name="movie" value="hobo1.swf" />
-        </object>
-    </div>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <div id="game"></div>
+    <script>
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            document.getElementById("game").appendChild(player);
+            player.load("hobo1.swf");
+            player.style.width = "100%";
+            player.style.height = "100%";
+        });
+    </script>
 </body>
 </html>
