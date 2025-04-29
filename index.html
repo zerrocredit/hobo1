@@ -14,6 +14,9 @@
         #game {
             width: 100%;
             height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         #game > div {
             width: 100%;
@@ -31,7 +34,7 @@
             document.getElementById("game").appendChild(player);
             player.load("hobo1.swf");
 
-            // Ensuring the player stretches to full screen
+            // Ensure player stretches to fill the entire screen
             player.style.width = "100%";
             player.style.height = "100%";
         });
