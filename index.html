@@ -14,11 +14,8 @@
         #game {
             width: 100%;
             height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
-        #game iframe {
+        #game > div {
             width: 100%;
             height: 100%;
         }
@@ -33,6 +30,10 @@
             const player = ruffle.createPlayer();
             document.getElementById("game").appendChild(player);
             player.load("hobo1.swf");
+
+            // Ensuring the player stretches to full screen
+            player.style.width = "100%";
+            player.style.height = "100%";
         });
     </script>
 </body>
